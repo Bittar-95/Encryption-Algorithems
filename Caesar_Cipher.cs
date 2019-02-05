@@ -33,25 +33,26 @@ namespace Secutiry
                     key = int.Parse(Console.ReadLine());
                 }
 
-                string encrypted_text = "";
+                string text_processing = "";
 
                 int ascii;
+
+
+
+
+
+
+
 
                 for (int i = 0; i < text.Length; i++)
                 {
                     if (type == 'E')
                     {
                         ascii = text[i] + key;
-                        if (key > 0)
+                        if (key > 0 && ascii > 90)
                         {
-
-
-                            if (ascii > 90)
-                            {
                                 ascii = ascii - 90;
                                 ascii = ascii + 64;
-
-                            }
                         }
                         else
                         {
@@ -67,17 +68,11 @@ namespace Secutiry
                     else
                     {
                         ascii = text[i] - key;
-                        if (key > 0)
+                        if (key > 0 && ascii<65)
                         {
-
-
-                            if (ascii < 65)
-                            {
                                 ascii = ascii - 65;
                                 ascii = ascii + 91;
                           
-
-                            }
                         }
                         else
                         {
@@ -89,12 +84,24 @@ namespace Secutiry
                         }
                     }
 
-                
-                    encrypted_text += Convert.ToChar(ascii);
+
+                    text_processing += Convert.ToChar(ascii);
                 }
+
+
+
+
+
+
+
+
+
+
+
+
                 if (type == 'E')
                 {
-                    Console.WriteLine("The Enctypted Text Is :[ {0} ]", encrypted_text);
+                    Console.WriteLine("The Enctypted Text Is :[ {0} ]", text_processing);
                     Console.WriteLine("---------------------------------------------------------------");
                     Console.Write("Write 1 To Encrypte Another Text Or 0 To Exit  ");
                     loop = int.Parse(Console.ReadLine());
@@ -102,7 +109,7 @@ namespace Secutiry
                 }
                 else
                 {
-                    Console.WriteLine("The Decrypted Text Is :[ {0} ]", encrypted_text);
+                    Console.WriteLine("The Decrypted Text Is :[ {0} ]", text_processing);
                     Console.WriteLine("---------------------------------------------------------------");
                     Console.Write("Write 1 To Decrypte Another Text Or 0 To Exit  ");
                     loop = int.Parse(Console.ReadLine());
