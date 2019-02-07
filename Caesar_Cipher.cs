@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Security
+namespace security
 {
     class Program
     {
@@ -33,7 +33,13 @@ namespace Security
 
                 for (int i = 0; i < text.Length; i++)
                 {
+                    if (text[i] == ' ')
+                    {
+                        ascii = ' ';
+                        text_processing += ' ';
+                        continue;
 
+                    }
                     ascii = text[i] + key;
                     if (key > 0 && ascii > 90)
                     {
